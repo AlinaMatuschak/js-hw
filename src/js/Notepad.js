@@ -3,10 +3,6 @@ class Notepad {
     this._notes = notes;
   }
 
-  get notes() {
-    return this._notes;
-  }
-
   static generateUniqueId() {
   return Math.random()
     .toString(36)
@@ -16,16 +12,25 @@ class Notepad {
     .substring(2, 15);
   }
 
-  addListItem(listRef, note) {
-    listRef.appendChild(note);
+  get notes() {
+    return this._notes;
+  }
+
+  saveNote(note) {
+    note.priority = PRIORITY_TYPES.LOW;
+    this._notes.push(note);
+    return note;
   }
 
   removeListItem(id) {
     this._notes = this._notes.filter(el => el.id !== id);
+    return this;
   }
 
-  filterNotes(symbols) {
-    return this._notes.filter(el => el.title.toLowerCase().includes(symbols.toLowerCase()) || el.body.toLowerCase().includes(symbols.toLowerCase()));
+  filterNotesByQuery(query) {
+    return this._notes.filter(el =>
+    el.title.toLowerCase().includes(query.toLowerCase()) ||
+    el.body.toLowerCase().includes(query.toLowerCase()));
   }
 }
 

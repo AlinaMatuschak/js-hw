@@ -1,5 +1,5 @@
 const handleFilterNotes = ({target}) => {
-    renderNoteList(document.querySelector('.note-list'), notepad.filterNotes(target.value));
+    renderNoteList(refs.list, notepad.filterNotesByQuery(target.value));
 };
 
 refs.inputForFilter.addEventListener('input', handleFilterNotes);

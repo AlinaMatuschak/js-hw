@@ -17,3 +17,11 @@ const NOTE_ACTIONS = {
   INCREASE_PRIORITY: 'increase-priority',
   DECREASE_PRIORITY: 'decrease-priority',
 };
+
+const refs = {
+  list: document.querySelector('.note-list'),
+  formForAddNote: document.querySelector('.note-editor'),
+  inputForFormTitle: document.querySelector('input[name="note_title"]'),
+  textareaForFormBody: document.querySelector('textarea[name="note_body"]'),
+  inputForFilter: document.querySelector('.search-form__input'),
+};
