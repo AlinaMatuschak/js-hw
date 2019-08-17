@@ -1,15 +1,8 @@
+import {PRIORITY_TYPES} from './utils/constants';
+
 class Notepad {
   constructor(notes) {
     this._notes = notes;
-  }
-
-  static generateUniqueId() {
-  return Math.random()
-    .toString(36)
-    .substring(2, 15) +
-  Math.random()
-    .toString(36)
-    .substring(2, 15);
   }
 
   get notes() {
@@ -32,5 +25,10 @@ class Notepad {
     el.title.toLowerCase().includes(query.toLowerCase()) ||
     el.body.toLowerCase().includes(query.toLowerCase()));
   }
+
+  findNoteById(id) {
+    return this._notes.find(el => el.id === id);
+  }
 }
 
+export default Notepad;

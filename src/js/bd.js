@@ -1,3 +1,5 @@
+import {PRIORITY_TYPES} from './utils/constants';
+
 const initialNotes = [
   {
     id: 'id-1',
@@ -28,3 +30,5 @@ const initialNotes = [
     priority: PRIORITY_TYPES.LOW,
   },
 ];
+
+export default initialNotes;

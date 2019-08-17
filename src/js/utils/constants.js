@@ -25,3 +25,5 @@ const refs = {
   textareaForFormBody: document.querySelector('textarea[name="note_body"]'),
   inputForFilter: document.querySelector('.search-form__input'),
 };
+
+export {PRIORITY_TYPES, ICON_TYPES, NOTE_ACTIONS, refs};

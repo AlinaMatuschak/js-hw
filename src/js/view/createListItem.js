@@ -1,3 +1,5 @@
+import {NOTE_ACTIONS, ICON_TYPES, PRIORITY_TYPES} from '../utils/constants';
+
 const creatElement = (el, classes, text = null) => {
   const element = document.createElement(el);
   classes.split(' ').map(e => element.classList.add(e));
@@ -45,3 +47,5 @@ const createListItem = ({
   listItem.appendChild(note);
   return listItem;
 };
+
+export default createListItem;
