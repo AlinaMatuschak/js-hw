@@ -44,6 +44,11 @@ module.exports = ({ mode = 'production' }) =>
           }
         ]
       },
+      resolve: {
+        alias: {
+           handlebars: 'handlebars/dist/handlebars.min.js'
+        }
+      },
       plugins: [
         new CleanWebpackPlugin('dist'),
         new FriendlyErrorsWebpackPlugin(),
