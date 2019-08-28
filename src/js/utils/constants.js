@@ -1,29 +1,18 @@
-const PRIORITY_TYPES = {
+export const PRIORITY_TYPES = {
   LOW: 0,
   NORMAL: 1,
   HIGH: 2,
 };
 
-const ICON_TYPES = {
-  EDIT: 'edit',
-  DELETE: 'delete',
-  ARROW_DOWN: 'expand_more',
-  ARROW_UP: 'expand_less',
+export const NOTIFICATION_MESSAGES = {
+  NOTE_DELETED_SUCCESS: 'Заметка успешно удалена',
+  NOTE_ADDED_SUCCESS: 'Заметка успешно добавлена 🎉',
+  EDITOR_FIELDS_EMPTY: 'Заполните поля редактора',
 };
 
-const NOTE_ACTIONS = {
+export const NOTE_ACTIONS = {
   DELETE: 'delete-note',
   EDIT: 'edit-note',
   INCREASE_PRIORITY: 'increase-priority',
   DECREASE_PRIORITY: 'decrease-priority',
 };
-
-const refs = {
-  list: document.querySelector('.note-list'),
-  formForAddNote: document.querySelector('.note-editor'),
-  inputForFormTitle: document.querySelector('input[name="note_title"]'),
-  textareaForFormBody: document.querySelector('textarea[name="note_body"]'),
-  inputForFilter: document.querySelector('.search-form__input'),
-};
-
-export {PRIORITY_TYPES, ICON_TYPES, NOTE_ACTIONS, refs};
