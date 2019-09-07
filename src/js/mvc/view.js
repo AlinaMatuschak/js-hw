@@ -1,14 +1,11 @@
-import Handlebars from "handlebars";
-
 import { refs } from "../utils/constants";
-import  template from "../templates/note.js";
-import notepad from "./model";
+import template from "../templates/note.hbs";
 
-const array = notepad.notes;
-
+const array = JSON.parse(localStorage.getItem('notes'));
+console.log(template);
 const refreshList = data => {
   const notes = data || array;
-  const htmlNotesList = Handlebars.compile(template)({ notes });
+  const htmlNotesList = template({ notes });
   refs.list.innerHTML = "";
   refs.list.insertAdjacentHTML("afterbegin", htmlNotesList);
 };

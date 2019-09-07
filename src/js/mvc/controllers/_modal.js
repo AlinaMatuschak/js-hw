@@ -28,8 +28,7 @@ function handleFormClick(event) {
             title: refs.inputForFormTitle.value,
             body: refs.textareaForFormBody.value,
             priority: PRIORITY_TYPES.LOW,
-        });
-        refreshList(notepad.notes);
+        }).then(() => refreshList(notepad.notes));
         successMessage(NOTIFICATION_MESSAGES.NOTE_ADDED_SUCCESS);
         reset();
         closeModal();
