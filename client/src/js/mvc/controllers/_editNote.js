@@ -23,7 +23,14 @@ export function handleEditNote ({target}) {
         if(title.getAttribute('contenteditable') === 'true') {
             note.title = title.textContent;
             note.body = body.textContent;
-            notepad.localStorage(notepad.notes);
+            const update = {
+                "id": li.dataset.id,
+                "title": title.textContent,
+                "body": body.textContent,
+                "priority": note.priority,
+            }
+
+            notepad.updateNote(li.dataset.id, update);
             title.setAttribute('contenteditable', false);
             body.setAttribute('contenteditable', false);
             target.textContent = 'edit';

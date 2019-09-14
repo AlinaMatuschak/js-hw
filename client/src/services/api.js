@@ -24,4 +24,14 @@ const deleteNote = (id) => {
     })
 }
 
-export {getNotes, saveNote, deleteNote}
+const updateNote = (id, noteToUpdate) => {
+    return fetch(URL + `/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify(noteToUpdate),
+        headers: {
+            'Content-Type': 'application/json',
+  },
+    })
+}
+
+export {getNotes, saveNote, deleteNote, updateNote}

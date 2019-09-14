@@ -18,11 +18,15 @@ class Notepad {
         return note;
       })
     }
-  
+
     removeListItem(id) {
       return api.deleteNote(id).then(() => this._notes = this._notes.filter(el => el.id !== id));
     }
-  
+    
+    updateNote(id, noteToUpdate) {
+      return api.updateNote(id, noteToUpdate);
+    }
+
     filterNotesByQuery(query) {
       return this._notes.filter(el =>
         el.title.toLowerCase().includes(query.toLowerCase()) ||
