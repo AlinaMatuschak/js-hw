@@ -28,7 +28,7 @@ function handleFormClick(event) {
             title: refs.inputForFormTitle.value,
             body: refs.textareaForFormBody.value,
             priority: PRIORITY_TYPES.LOW,
-        }).then(() => refreshList());
+        }).then((notes) => refreshList(notes));
         successMessage(NOTIFICATION_MESSAGES.NOTE_ADDED_SUCCESS);
         reset();
         closeModal();

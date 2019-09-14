@@ -15,7 +15,7 @@ class Notepad {
     saveNote(note) {
       return api.saveNote(note).then(note => {
         this._notes.push(note);
-        return note;
+        return this._notes;
       })
     }
 
