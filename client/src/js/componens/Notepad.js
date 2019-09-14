@@ -28,13 +28,13 @@ class Notepad {
     }
 
     filterNotesByQuery(query) {
-      return this._notes.filter(el =>
+      return Promise.resolve(this._notes.filter(el =>
         el.title.toLowerCase().includes(query.toLowerCase()) ||
-        el.body.toLowerCase().includes(query.toLowerCase()));
+        el.body.toLowerCase().includes(query.toLowerCase())));
     }
 
     filterNotesByPriority() {
-      return this._notes.sort((a, b) => b.priority - a.priority);
+      return Promise.resolve(this._notes.sort((a, b) => b.priority - a.priority));
     }
   
     findNoteById(id) {

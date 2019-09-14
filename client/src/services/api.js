@@ -21,7 +21,7 @@ const saveNote = (note) => {
 const deleteNote = (id) => {
     return fetch(URL + `/${id}`, {
         method: 'DELETE',
-    })
+    }).catch(console.error)
 }
 
 const updateNote = (id, noteToUpdate) => {
@@ -30,8 +30,8 @@ const updateNote = (id, noteToUpdate) => {
         body: JSON.stringify(noteToUpdate),
         headers: {
             'Content-Type': 'application/json',
-  },
-    })
+        },
+    }).catch(console.error)
 }
 
 export {getNotes, saveNote, deleteNote, updateNote}

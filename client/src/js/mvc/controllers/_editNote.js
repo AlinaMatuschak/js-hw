@@ -19,24 +19,22 @@ export function handleEditNote ({target}) {
         return
     };
 
-    setTimeout(() => {
-        if(title.getAttribute('contenteditable') === 'true') {
-            note.title = title.textContent;
-            note.body = body.textContent;
-            const update = {
-                "id": li.dataset.id,
-                "title": title.textContent,
-                "body": body.textContent,
-                "priority": note.priority,
-            }
+    if(title.getAttribute('contenteditable') === 'true') {
+        note.title = title.textContent;
+        note.body = body.textContent;
+        const update = {
+            "id": li.dataset.id,
+            "title": title.textContent,
+            "body": body.textContent,
+            "priority": note.priority,
+        }
 
-            notepad.updateNote(li.dataset.id, update);
-            title.setAttribute('contenteditable', false);
-            body.setAttribute('contenteditable', false);
-            target.textContent = 'edit';
-            li.removeAttribute('style');
-            target.removeAttribute('style');
-            successMessage(NOTIFICATION_MESSAGES.NOTE_SAVE_SUCCESS);
-        };
-    }, 400);
+        notepad.updateNote(li.dataset.id, update);
+        title.setAttribute('contenteditable', false);
+        body.setAttribute('contenteditable', false);
+        target.textContent = 'edit';
+        li.removeAttribute('style');
+         target.removeAttribute('style');
+         successMessage(NOTIFICATION_MESSAGES.NOTE_SAVE_SUCCESS);
+     };
 };
