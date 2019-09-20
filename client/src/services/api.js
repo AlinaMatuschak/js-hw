@@ -1,37 +1,41 @@
-const URL = "http://localhost:3000/notes";
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+import axios from "axios";
 
-const getNotes = () => {
-  return  fetch(URL)
-    .then(notes => notes.json())
-    .catch(console.error);
+axios.defaults.baseURL = "http://localhost:3000/notes";
+
+const getNotes = async() => {
+    try {
+        const notes = await axios.get();
+        return notes.data;
+    } catch (err) {
+        throw err
+    }
 }
 
-const saveNote = (note) => {
-    return fetch(URL, {
-        method: 'POST',
-        body: JSON.stringify(note),
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    })
-    .then(note => note.json())
-    .catch(console.error)
+const saveNote = async(note) => {
+    try {
+        const postNote = await axios.post('', note);
+        return postNote.data;
+    } catch (err) {
+        throw err
+    }
 }
 
-const deleteNote = (id) => {
-    return fetch(URL + `/${id}`, {
-        method: 'DELETE',
-    }).catch(console.error)
+const deleteNote = async(id) => {
+    try {
+        return await axios.delete(`/${id}`);
+    } catch(err) {
+        throw err
+    }
 }
 
-const updateNote = (id, noteToUpdate) => {
-    return fetch(URL + `/${id}`, {
-        method: 'PUT',
-        body: JSON.stringify(noteToUpdate),
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    }).catch(console.error)
+const updateNote = async(id, noteToUpdate) => {
+    try {
+        return await axios.put( `/${id}`, noteToUpdate);
+    } catch(err) {
+        throw err
+    }
 }
 
 export {getNotes, saveNote, deleteNote, updateNote}

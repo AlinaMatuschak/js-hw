@@ -21,10 +21,8 @@ function reset() {
 
 function handleFormClick(event) {
     event.preventDefault();
-    const shortid = require('shortid');
     if(refs.inputForFormTitle.value.length > 0 && refs.textareaForFormBody.value.length > 0) {
         notepad.saveNote({ 
-            id: shortid.generate(),
             title: refs.inputForFormTitle.value,
             body: refs.textareaForFormBody.value,
             priority: PRIORITY_TYPES.LOW,
