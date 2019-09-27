@@ -1,8 +1,8 @@
 import * as api from '../../services/api.js';
 
 class Notepad {
-    constructor() {
-      this._notes = [];
+    constructor(notes = []) {
+      this._notes = notes;
     }
 
     get notes() {
@@ -42,4 +42,5 @@ class Notepad {
     }
   }
   
-  export default Notepad;
+  // export default Notepad;
+  module.exports = Notepad;
