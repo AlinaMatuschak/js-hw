@@ -38,5 +38,4 @@ const updateNote = async(id, noteToUpdate) => {
     }
 }
 
-// export {getNotes, saveNote, deleteNote, updateNote}
-module.exports = {getNotes, saveNote, deleteNote, updateNote};
+export {getNotes, saveNote, deleteNote, updateNote}

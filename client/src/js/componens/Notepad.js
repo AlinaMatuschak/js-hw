@@ -42,5 +42,4 @@ class Notepad {
     }
   }
   
-  // export default Notepad;
-  module.exports = Notepad;
+  export default Notepad;

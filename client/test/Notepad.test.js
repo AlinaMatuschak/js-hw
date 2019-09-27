@@ -1,8 +1,8 @@
-const Notepad = require('../src/js/componens/Notepad');
+import Notepad from '../src/js/componens/Notepad';
+import { getNotes, deleteNote } from '../src/services/api';
+
 const PRIORITY_TYPES = require('./constants');
 const initialNotes = require('./bd');
-
-const { getNotes, deleteNote } = require('../src/services/api');
 
 //  =================== get=========================  //
 test(' get notes', async () => {
